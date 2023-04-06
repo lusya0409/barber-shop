@@ -1,0 +1,24 @@
+.page-header {
+  background-color: darkslategray;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page-nav {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+// .logo-link {
+//   background-color: transparent;
+// }
+.logo-icon {
+  display: block;
+  stroke: var(--secondary-white-color);
+}
+.mobile-menu-icon {
+  display: block;
+  stroke: currentColor;
+  //   background-color: currentColor;
+}
