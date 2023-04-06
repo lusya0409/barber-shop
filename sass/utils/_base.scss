@@ -19,7 +19,8 @@ button {
 .link {
   text-decoration: none;
 }
-img {
+img,
+picture {
   display: block;
   max-width: 100%;
   height: auto;
@@ -53,8 +54,13 @@ body {
 }
 
 .section {
-  padding-top: 96px;
-  padding-bottom: 96px;
+  padding-top: 84px;
+  padding-bottom: 84px;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
 
   @media screen and (min-width: 1200px) {
     padding-top: 120px;
