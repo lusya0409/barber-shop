@@ -1,13 +1,15 @@
-.icon-social {
-  width: 20px;
-  height: 20px;
-  fill: var(--primary-dark-color);
+.works-container {
+  .top-text {
+    margin-bottom: 71px;
+    @media screen and (min-width: 768px) {
+      margin-bottom: 44px;
+    }
+  }
 }
-.icon-social-link {
-  display: block;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  //   background-color: var(--primary-dark-color);
-  //   fill: var(--primary-dark-color);
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }

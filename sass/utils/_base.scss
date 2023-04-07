@@ -3,12 +3,19 @@ h2,
 h3,
 h4,
 p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding-left: 0;
 }
 
 button {
   cursor: pointer;
+}
+
+address {
+  font-style: normal;
 }
 
 .list {
@@ -19,8 +26,7 @@ button {
 .link {
   text-decoration: none;
 }
-img,
-picture {
+img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -34,11 +40,26 @@ body {
   line-height: 1.67;
   letter-spacing: 0.02em;
 }
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0;
+  border: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}
+
 .container {
   outline: 1px solid red;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 
@@ -65,5 +86,67 @@ body {
   @media screen and (min-width: 1200px) {
     padding-top: 120px;
     padding-bottom: 120px;
+  }
+}
+.top-text {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  margin-bottom: 20px;
+
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  color: var(--primary-dark-color);
+
+  &::before {
+    content: '';
+    display: block;
+
+    width: 60px;
+    height: 1px;
+    background-color: currentColor;
+  }
+}
+.title {
+  margin-bottom: 20px;
+
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.11;
+  letter-spacing: 0.05em;
+
+  color: var(--primary-dark-color);
+}
+
+.button {
+  margin-right: auto;
+  min-width: 160px;
+  height: 40px;
+  padding: 12px 20px;
+
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+
+  color: var(--primary-dark-color);
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+
+  transition: background-color var(--cubic-bezier), color var(--cubic-bezier);
+  &:hover,
+  &:focus {
+    background-color: var(--brand-color);
+    color: var(--secondary-white-color);
   }
 }

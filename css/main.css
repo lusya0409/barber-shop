@@ -3,12 +3,20 @@ h2,
 h3,
 h4,
 p {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 0;
 }
 
 button {
   cursor: pointer;
+}
+
+address {
+  font-style: normal;
 }
 
 .list {
@@ -21,8 +29,7 @@ button {
   text-decoration: none;
 }
 
-img,
-picture {
+img {
   display: block;
   max-width: 100%;
   height: auto;
@@ -37,11 +44,24 @@ body {
   letter-spacing: 0.02em;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+}
+
 .container {
   outline: 1px solid red;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -76,6 +96,60 @@ body {
     padding-top: 120px;
     padding-bottom: 120px;
   }
+}
+
+.top-text {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+  color: var(--primary-dark-color);
+}
+.top-text::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.11;
+  letter-spacing: 0.05em;
+  color: var(--primary-dark-color);
+}
+
+.button {
+  margin-right: auto;
+  min-width: 160px;
+  height: 40px;
+  padding: 12px 20px;
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--primary-dark-color);
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+  transition: background-color var(--cubic-bezier), color var(--cubic-bezier);
+}
+.button:hover, .button:focus {
+  background-color: var(--brand-color);
+  color: var(--secondary-white-color);
 }
 
 :root {
@@ -117,7 +191,6 @@ body {
 @media screen and (min-width: 768px) {
   .about-container {
     display: flex;
-    align-items: center;
     gap: 30px;
   }
 }
@@ -139,6 +212,12 @@ body {
   }
 }
 
+.about-content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
 @media screen and (min-width: 768px) {
   .about-content-wrap {
     width: 50%;
@@ -149,42 +228,20 @@ body {
     max-width: 470px;
   }
 }
-
-.top-text {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  margin-bottom: 20px;
-  font-family: var(--primary-font);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 11px;
-  line-height: 1.36;
-  text-transform: uppercase;
-  color: var(--primary-dark-color);
-}
-.top-text::before {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 1px;
-  background-color: currentColor;
-}
-
-.title {
-  margin-bottom: 20px;
-  font-family: var(--secondary-font);
-  font-style: normal;
-  font-weight: 700;
+.about-content-wrap .title {
   font-size: 28px;
   line-height: 1.18;
-  letter-spacing: 0.05em;
-  color: var(--primary-dark-color);
+  max-width: 306px;
+}
+@media screen and (min-width: 768px) {
+  .about-content-wrap .title {
+    max-width: 100%;
+  }
 }
 @media screen and (min-width: 1200px) {
-  .title {
+  .about-content-wrap .title {
     font-size: 42px;
-    line-height: 1.67;
+    line-height: 1.11;
   }
 }
 
@@ -216,38 +273,208 @@ body {
   color: var(--secondary-dark-color);
 }
 
-.button {
-  min-width: 160px;
-  height: 40px;
-  padding: 12px 20px;
-  font-family: var(--primary-font);
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  color: var(--primary-dark-color);
-  border: 1px solid #ff6c00;
-  border-radius: 25px;
-  transition: background-color var(--cubic-bezier), color var(--cubic-bezier);
+.preference-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 44px;
+  align-items: center;
 }
-.button:hover, .button:focus {
-  background-color: var(--brand-color);
-  color: var(--secondary-white-color);
+@media screen and (min-width: 1200px) {
+  .preference-container {
+    max-width: 1000px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+.preference-container .bottom-text {
+  margin-bottom: 0;
+}
+
+.preference-info-wrap {
+  max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+  .preference-info-wrap {
+    max-width: 500px;
+  }
+}
+
+.preference-list {
+  outline: 1px solid blue;
+  display: flex;
+  max-width: 418px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+@media screen and (min-width: 768px) {
+  .preference-list {
+    max-width: 450px;
+    margin-left: auto;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .preference-list {
+    max-width: 370px;
+    order: -1;
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+.preference-item {
+  max-width: calc(50% - 15px);
+  height: 133px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  background-color: #f7f7f7;
+  padding: 20px 36px;
+}
+.preference-item:nth-child(2n) {
+  margin-top: 30px;
+}
+@media screen and (min-width: 768px) {
+  .preference-item {
+    padding: 20px 44px;
+    width: 210px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .preference-item {
+    padding: 20px 24px;
+    width: 170px;
+  }
+}
+
+.preference-count {
+  position: relative;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.36;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: var(--primary-dark-color);
+}
+.preference-count::after {
+  position: absolute;
+  display: block;
+  content: "+";
+  width: 13px;
+  height: 22px;
+  top: 5px;
+  right: -10px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.38;
+  text-align: center;
+  color: var(--brand-color);
+}
+
+.preference-item-text {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-align: center;
+  color: var(--primary-dark-color);
+}
+
+.barbers-container .title {
+  margin-bottom: 44px;
+  font-size: 42px;
+  line-height: 1.11;
+}
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .barbers-container {
+    max-width: 450px;
+  }
+}
+
+.barbers-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 64px;
+}
+@media screen and (min-width: 1200px) {
+  .barbers-list {
+    justify-content: flex-start;
+    gap: 30px;
+    flex-basis: calc((100% - 60px) / 3);
+  }
+}
+
+.barbers-img-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.barbers-subtitle {
+  padding-top: 30px;
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.39;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #303030;
+}
+
+.barbers-text {
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.37;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #ff6c00;
+}
+
+.icon-social-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  transition: outline var(--cubic-bezier);
+}
+.icon-social-link:hover, .icon-social-link:focus {
+  outline: 1px solid var(--brand-color);
 }
 
 .icon-social {
   width: 20px;
   height: 20px;
   fill: var(--primary-dark-color);
+  transition: fill var(--cubic-bezier);
+}
+.icon-social-link:hover .icon-social, .icon-social-link:focus .icon-social {
+  fill: var(--brand-color);
 }
 
-.icon-social-link {
-  display: block;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+.works-container .top-text {
+  margin-bottom: 71px;
+}
+@media screen and (min-width: 768px) {
+  .works-container .top-text {
+    margin-bottom: 44px;
+  }
+}
+
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
 @media screen and (min-width: 1200px) {
