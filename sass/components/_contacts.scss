@@ -1,8 +1,135 @@
-.section {
-  .online-form {
-    @media screen and (min-width: 1200px) {
-      padding-top: 130px;
-      padding-bottom: 183px;
+// .section {
+//   .online-form {
+//     @media screen and (min-width: 1200px) {
+//       padding-top: 130px;
+//       padding-bottom: 183px;
+//     }
+//   }
+// }
+.contacts-section {
+  background-color: black;
+  .title {
+    margin-bottom: 40px;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      text-align: start;
+    }
+  }
+}
+.contacts-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 44px;
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    flex-wrap: nowrap;
+
+    gap: 30px;
+  }
+}
+
+.contacts-address {
+  width: 100%;
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 15px);
+  }
+}
+
+.contacts-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: start;
+}
+
+.contacts-item {
+  &:first-of-type {
+    font-weight: 700;
+    @media screen and (min-width: 768px) {
+      max-width: 230px;
+    }
+  }
+}
+.contacts-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  color: var(--primary-white-color);
+  transition: color var(--cubic-bezier);
+
+  &:hover,
+  &:focus {
+    outline: transparent;
+
+    color: var(--brand-color);
+  }
+}
+
+.contacts-icon {
+  fill: currentColor;
+
+  .contacts-link:hover + &,
+  .contacts-link:focus-visible + & {
+    fill: var(--brand-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    .contacts-item:first-of-type .contacts-link & {
+      align-self: baseline;
+      margin-top: 4px;
+    }
+  }
+}
+
+.contacts-hours-wrap {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-content: flex-start;
+
+  @media screen and (min-width: 768px) {
+    width: calc(50% - 15px);
+  }
+
+  .top-text {
+    color: var(--secondary-white-color);
+    margin-bottom: 0;
+  }
+}
+.contacts-text {
+  color: var(--primary-white-color);
+}
+
+.contact-wrap {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    .online-form-section {
+      width: 50%;
+      max-width: 785px;
+      // padding-left: 0;
+      // padding-right: 0;
+
+      .container {
+        width: calc(1200px / 2);
+        // padding-left: 0;
+        // padding-right: 0;
+      }
+    }
+
+    .contacts-section {
+      width: 50%;
+      max-width: 785px;
+      padding-left: 0;
+      padding-right: 0;
+
+      .container {
+        width: calc(1200px / 2);
+        padding-left: 100px;
+        // padding-right: 0;
+      }
     }
   }
 }

@@ -1,7 +1,112 @@
 .section {
-  .online-form {
-    @media screen and (min-width: 1200px) {
-      padding-top: 130px;
+  @media screen and (min-width: 1200px) {
+    padding-top: 130px;
+  }
+}
+
+.online-form-section {
+  background-color: #191c26;
+  .title {
+    margin-bottom: 44px;
+    text-align: center;
+    @media screen and (min-width: 768px) {
+      text-align: start;
     }
+  }
+  @media screen and (max-width: 767px) {
+    .button {
+      margin-left: auto;
+    }
+  }
+}
+.form {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 44px;
+
+  &-field {
+    width: 100%;
+    position: relative;
+    @media screen and (min-width: 768px) {
+      &:not(:last-of-type) {
+        width: calc(50% - 15px);
+      }
+    }
+  }
+}
+
+.input,
+.textarea {
+  display: block;
+  width: 100%;
+  height: 24px;
+  padding: 0;
+  padding-left: 55px;
+  padding-bottom: 8px;
+  border: 0;
+
+  color: var(--secondary-white-color);
+
+  background-color: transparent;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+  outline: transparent;
+
+  transition: border-bottom var(--cubic-bezier);
+
+  &:focus {
+    border-bottom: 1px solid var(--secondary-white-color);
+  }
+  &::placeholder {
+    // background-color: inherit;
+    // font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: rgba(157, 164, 189, 0.4);
+  }
+}
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--primary-font);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: rgba(157, 164, 189, 0.4);
+  transition: color var(--cubic-bezier), transform var(--cubic-bezier);
+
+  .input:focus + &,
+  .textarea:focus + & {
+    color: var(--secondary-white-color);
+    transform: translateY(-100%);
+  }
+}
+
+.textarea {
+  width: 100%;
+  resize: none;
+  height: 76px;
+  padding: 0;
+  padding-left: 5px;
+
+  &::placeholder {
+    font-weight: 600;
+    font-size: 11px;
+    line-height: 1.36;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: rgba(157, 164, 189, 0.4);
   }
 }
