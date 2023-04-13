@@ -20,22 +20,107 @@
     <link rel="stylesheet" href="./dist/css/main.min.css" />
   </head>
   <body>
-    <!-- <header class="page-header">
+    <header class="page-header">
       <div class="header-container container">
         <nav class="page-nav">
           <a class="logo-link link" href="./index.html">
             <svg class="logo-icon" width="69" height="55">
-              <use href="./images/icons.svg#icon-Logo-1"></use>
+              <use href="./images/icons.svg#icon-logo-1"></use>
             </svg>
           </a>
+          <ul class="menu-nav-list list">
+            <li class="menu-nav-item">
+              <a href="#about" class="menu-nav-link link">About</a>
+            </li>
+            <li class="menu-nav-item">
+              <a href="#prices" class="menu-nav-link link"
+                >Services and prices</a
+              >
+            </li>
+            <li class="menu-nav-item">
+              <a href="#barbers" class="menu-nav-link link">Barbers</a>
+            </li>
+            <li class="menu-nav-item">
+              <a href="#contacts" class="menu-nav-link link">Contacts</a>
+            </li>
+          </ul>
         </nav>
-        <button class="mobile-menu-open" type="button">
-          <svg class="mobile-menu-icon" width="32" height="22">
+        <div class="menu-contacts">
+          <a href="tel:+380441111111" class="contacts-link link">
+            +38 044 111 11 11
+          </a>
+          <button class="button button-dark" type="button">
+            online-booking
+          </button>
+        </div>
+
+        <button class="mobile-menu-open js-open-menu" type="button">
+          <svg class="mobile-menu-open-icon" width="32" height="22">
             <use href="./images/icons.svg#icon-menu-hamburger"></use>
           </svg>
         </button>
+
+        <div class="mobile-menu js-menu-container">
+          <div class="mobile-menu-container container">
+            <button class="mobile-menu-close js-close-menu" type="button">
+              <svg class="mobile-menu-close-icon" width="40" height="40">
+                <use href="./images/icons.svg#icon-close"></use>
+              </svg>
+            </button>
+            <div class="mobile-menu-wrap">
+              <ul class="mobile-menu-nav-list list">
+                <li class="mobile-menu-nav-item">
+                  <a href="#about" class="mobile-menu-nav-link link">About</a>
+                </li>
+                <li class="mobile-menu-nav-item">
+                  <a href="#prices" class="mobile-menu-nav-link link"
+                    >Services and prices</a
+                  >
+                </li>
+                <li class="mobile-menu-nav-item">
+                  <a href="#barbers" class="mobile-menu-nav-link link"
+                    >Barbers</a
+                  >
+                </li>
+                <li class="mobile-menu-nav-item">
+                  <a href="#contacts" class="mobile-menu-nav-link link"
+                    >Contacts</a
+                  >
+                </li>
+              </ul>
+
+              <div class="mobile-menu-contacts">
+                <a href="tel:+380441111111" class="contacts-link link">
+                  +38 044 111 11 11
+                </a>
+                <button class="button" type="button">online-booking</button>
+              </div>
+
+              <ul class="social-list list">
+                <li class="social-item">
+                  <a
+                    href
+                    target="_blank"
+                    class="social-link link"
+                    rel="noopener nofollow noreferrer"
+                    >Instagram</a
+                  >
+                </li>
+                <li class="social-item">
+                  <a
+                    href
+                    target="_blank"
+                    class="social-link link"
+                    rel="noopener nofollow noreferrer"
+                    >Youtube</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
-    </header> -->
+    </header>
     <main>
       <section class="hero-section">
         <div class="hero-container container">
@@ -75,7 +160,7 @@
           </div>
         </div>
       </section>
-      <section class="about-section section">
+      <section id="about" class="about-section section">
         <div class="about-container container">
           <ul class="about-list list">
             <li class="about-item">
@@ -192,7 +277,7 @@
           </div>
         </div>
       </section>
-      <section class="prices-section section">
+      <section id="prices" class="prices-section section">
         <div class="prices-container container">
           <p class="top-text top-text-white">
             Spend your time with the best masters
@@ -273,7 +358,7 @@
           </ul>
         </div>
       </section>
-      <section class="barbers-section section">
+      <section id="barbers" class="barbers-section section">
         <div class="barbers-container container">
           <p class="top-text">For true enjoyers of the atmosphere</p>
           <h2 class="title">Our barbers</h2>
@@ -954,7 +1039,7 @@
             </form>
           </div>
         </section>
-        <section class="contacts-section section">
+        <section id="contacts" class="contacts-section section">
           <div class="container">
             <h2 class="title title-white">Contacts</h2>
             <div class="contacts-container">
@@ -968,7 +1053,7 @@
                       rel="noopener noreferrer nofollow"
                     >
                       <svg class="contacts-icon" width="24" height="24">
-                        <use href="./images/icons.svg#icon-phone"></use>
+                        <use href="./images/icons.svg#icon-map-pin"></use>
                       </svg>
                       st. Vasilkovaya, 7A Kiev, 08132
                     </a>
@@ -1026,5 +1111,6 @@
         </ul>
       </div>
     </footer>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

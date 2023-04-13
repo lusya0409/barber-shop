@@ -176,7 +176,10 @@ body {
 }
 
 .page-header {
-  background-color: darkslategray;
+  position: absolute;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  width: 100%;
 }
 
 .header-container {
@@ -186,22 +189,212 @@ body {
 }
 
 .page-nav {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  display: flex;
+  align-items: center;
 }
 
-.logo-icon {
+@media screen and (max-width: 767px) {
+  .menu-nav-list {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu-contacts {
+    display: none;
+  }
+}
+
+.mobile-menu-container {
+  padding-top: 48px;
+  padding-left: 40px;
+  padding-right: 31px;
+  padding-bottom: 48px;
+}
+
+.mobile-menu-open {
+  padding: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border: none;
+  background-color: transparent;
+}
+.mobile-menu-open-icon {
   display: block;
   stroke: var(--secondary-white-color);
 }
 
-.mobile-menu-icon {
+.mobile-menu {
+  position: fixed;
+  max-width: 337px;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  background-color: var(--secondary-white-color);
+  box-shadow: -4px 0px 8px rgba(0, 0, 0, 0.04), -2px 0px 4px rgba(0, 0, 0, 0.08), -1px 0px 3px rgba(0, 0, 0, 0.16);
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu-close {
+  margin-left: auto;
   display: block;
-  stroke: currentColor;
+  padding: 0;
+  margin-bottom: 30px;
+  background-color: transparent;
+  border: none;
+}
+.mobile-menu-close-icon {
+  fill: var(--primary-dark-color);
+}
+
+.mobile-menu-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px;
+}
+
+.mobile-menu-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mobile-menu-nav-link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.39;
+  letter-spacing: 0.1em;
+  color: var(--primary-dark-color);
+}
+.mobile-menu-nav-link:hover, .mobile-menu-nav-link:focus {
+  color: var(--brand-color);
+}
+
+.mobile-menu-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.mobile-menu-contacts .contacts-link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.39;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--primary-dark-color);
+}
+.mobile-menu-contacts .contacts-link:hover, .mobile-menu-contacts .contacts-link:focus {
+  color: var(--brand-color);
+}
+
+.mobile-menu-container .social-list {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 0;
+  max-width: 192px;
+  -moz-column-gap: 40px;
+       column-gap: 40px;
+  row-gap: 24px;
+}
+.mobile-menu-container .social-list .social-item:last-child {
+  margin-left: 100px;
+}
+
+.logo-icon {
+  display: block;
+  fill: var(--secondary-white-color);
+}
+@media screen and (min-width: 768px) {
+  .logo-icon {
+    margin-right: 59px;
+    margin-left: 11px;
+    fill: var(--primary-dark-color);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .logo-icon {
+    margin-right: 131px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mobile-menu-open,
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.menu-nav-link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: var(--secondary-white-color);
+  transition: color var(--cubic-bezier);
+}
+.menu-nav-link:hover, .menu-nav-link:focus {
+  color: var(--brand-color);
+}
+
+@media screen and (min-width: 768px) {
+  .menu-contacts {
+    position: relative;
+    top: 21px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column-reverse;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .menu-contacts {
+    flex-direction: row;
+    top: 0;
+    gap: 43px;
+  }
+}
+.menu-contacts .contacts-link {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--secondary-white-color);
+  transition: color var(--cubic-bezier);
+}
+.menu-contacts .contacts-link:hover, .menu-contacts .contacts-link:focus {
+  color: var(--brand-color);
 }
 
 .hero-section {
-  padding-top: 113px;
+  padding-top: 208px;
   padding-bottom: 209px;
   margin-left: auto;
   margin-right: auto;
@@ -459,9 +652,6 @@ body {
     background-image: url("../../images/prices/imgprices-des@2x.webp");
   }
 }
-.prices-section .title {
-  position: relative;
-}
 @media screen and (max-width: 767px) {
   .prices-section .title {
     font-size: 40px;
@@ -469,8 +659,11 @@ body {
   }
 }
 
-.prices-listes-wrap {
+.prices-container {
   position: relative;
+}
+
+.prices-listes-wrap {
   max-width: 100%;
   justify-content: center;
   margin-bottom: 44px;
