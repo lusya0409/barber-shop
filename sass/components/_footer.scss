@@ -11,20 +11,19 @@
 .footer-container {
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
 }
 
 .social-list {
   display: flex;
   max-width: 270px;
   gap: 40px;
-  margin-bottom: 20px;
+  margin-left: auto;
   justify-content: space-between;
   align-items: center;
   color: var(--primary-dark-color);
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 0;
-  }
 
   &::before {
     content: '';
@@ -54,17 +53,11 @@
   }
 }
 .text-copyright {
-  padding-top: 20px;
-  align-self: flex-end;
-
+  margin-right: auto;
   font-weight: 600;
   font-size: 11px;
   line-height: 1.36;
   letter-spacing: 0.2em;
 
   color: var(--primary-white-color);
-
-  @media screen and (min-width: 768px) {
-    padding-top: 0;
-  }
 }
