@@ -78,6 +78,7 @@
 
 .contacts-address {
   width: 100%;
+  max-width: 322px;
   @media screen and (min-width: 768px) {
     width: calc(50% - 15px);
   }
@@ -135,6 +136,7 @@
 
 .contacts-hours-wrap {
   width: 100%;
+  max-width: 249px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
